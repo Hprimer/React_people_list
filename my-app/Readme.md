@@ -1,7 +1,7 @@
 для запуска проекта необходимо установить:
 - node.js 
 - npm i react-icons 
-- npm install bootstrap
+- npm install bootstrap  
 ввести в терминале:
 - cd '.\React IT proger 3\'
 - cd .\my-app\ 
