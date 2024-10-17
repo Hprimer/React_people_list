@@ -10,11 +10,16 @@ class AddUser extends React.Component{
 			isHappy: false
 		}
 	}
+
 	render(){
 	return(
 		<form ref={(el) => this.myForm = el}>
 			<input placeholder="name" onChange={(e) => this.setState({name:e.target.value})}></input>
-			<input placeholder="age" onChange={(e) => this.setState({age:e.target.value})}></input>
+			<input placeholder="age" 
+				type='number' 
+				min="1" 
+				onChange={(e) => this.setState({age:e.target.value})
+			}></input>
 			{/* <div className="form-check form-switch">	
 				<div className="row">		
 					<div className="col-10">
@@ -35,6 +40,11 @@ class AddUser extends React.Component{
 				</div>
 			</div>
 			<button type="button" onClick={()=> {
+				// Проверка на заполненность полей
+				if (this.state.name.trim() === '' || this.state.age <= 0) {
+					alert('Пожалуйста, заполните все поля.');
+					return;
+				}            
 				this.myForm.reset()
 				this.userAdd = {
 					name: this.state.name,
@@ -44,8 +54,9 @@ class AddUser extends React.Component{
 				if(this.props.user){//сделано для редактирования пользователя "если пользователь передался то id меняй"
 					this.userAdd.id = this.props.user.id
 				}
-				this.props.onAdd(this.userAdd)}
-			}> Добавить</button>
+				this.props.onAdd(this.userAdd)}}
+				
+			> Добавить</button>
 		</form>
 	)
 }}

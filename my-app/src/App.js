@@ -12,19 +12,19 @@ class App extends React.Component{
 			users: [
 				{
 					id: 1,
-					name: 'Nail',
+					name: 'Dan',
 					age: 20,
 					isHappy: true
 				},
 				{
 					id: 2,
-					name: 'Rasul',
+					name: 'Ras',
 					age: 23,
 					isHappy: true
 				},
 				{
 					id: 3,
-					name: 'David',
+					name: 'Dava',
 					age: 18,
 					isHappy: false
 				}
